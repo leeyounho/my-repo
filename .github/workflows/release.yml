@@ -50,3 +50,9 @@ jobs:
           echo "${{ steps.draft_release.outputs.body }}"
           echo "${{ steps.draft_release.outputs.name }}"
           echo "${{ steps.draft_release.outputs.tag_name }}"
+          
+      - name: Upload Release Asset
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run:
+          gh release upload "${{ steps.draft_release.outputs.tag_name }}" README.md
