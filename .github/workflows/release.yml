@@ -12,11 +12,9 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - name: Check if PR is merged or manual trigger
-        if: ${{ github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch' }}
-   
-      - uses: actions/checkout@v3
+    steps:   
+      - if: ${{ github.event.pull_request.merged == true || github.event_name == 'workflow_dispatch' }}
+        uses: actions/checkout@v3
           
       - name: Use release drafter
         id: draft_release
