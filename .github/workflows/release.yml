@@ -42,10 +42,11 @@ jobs:
         with:
           config-name: release-drafter.yml
           publish: false
-          
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: echo release notes
+      - name: echo env
         run: |
-          echo "Release Notes:"
+          echo "${{ steps.draft_release.outputs.id }}"
           echo "${{ steps.draft_release.outputs.body }}"
+          echo "${{ steps.draft_release.outputs.name }}"
+          echo "${{ steps.draft_release.outputs.tag_name }}"
