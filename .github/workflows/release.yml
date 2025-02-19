@@ -4,9 +4,9 @@ name: Release
 
 # Controls when the workflow will run
 on:
-  push:
-    tags:
-     - 'v*.*.*' # 버전 태그 패턴에 맞는 경우 실행
+  pull_request:
+    branches:
+      - main
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
