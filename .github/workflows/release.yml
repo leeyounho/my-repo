@@ -38,5 +38,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release delete-asset "${{ steps.draft_release.outputs.tag_name }}" README.md --yes
+          gh release delete-asset "${{ steps.draft_release.outputs.tag_name }}" README.md --yes || true
           gh release upload "${{ steps.draft_release.outputs.tag_name }}" README.md
