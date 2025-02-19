@@ -1,6 +1,5 @@
-draft: false
-name-template: 'v$RESOLVED_VERSION 🌈'
-tag-template: 'v$RESOLVED_VERSION'
+name: Automated Release Drafter
+tag_template: 'release-${DATE}-${TIME}'
 categories:
   - title: '🚀 Features'
     labels:
