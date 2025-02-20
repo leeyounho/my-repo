@@ -1,13 +1,9 @@
 name: Release
 
 on:
-  push:
+  create:
     branches:
-      - main
-    types:
-      - opened
-      - synchronize
-      - reopened
+      - release*
   workflow_dispatch:
 
 permissions:
